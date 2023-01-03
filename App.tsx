@@ -21,7 +21,7 @@ export default function App() {
       <p>
         <ol>
           <li>
-            Do{' '}
+            1<sup>st</sup> traversal -
             <a
               href="https://www.javatpoint.com/postorder-traversal"
               target="_blank"
@@ -30,18 +30,19 @@ export default function App() {
             </a>{' '}
             of the tree data structure.
           </li>
-          <li>
-            Assign <em>X</em> value:
-            <h4>If it is left most node or left most sibling.</h4>
-            <ul>
-              <li>
-                Assign X to <em>0</em>.
-              </li>
-              <li>
-                Assign X to <em>X + 1</em> if it is not.
-              </li>
-            </ul>
-          </li>
+          Assign <em>X</em> value:
+          <h4>If it is left most node or left most sibling.</h4>
+          <ul>
+            <li>
+              Assign X to <em>0</em>.
+            </li>
+          </ul>
+          <h4>If the node has a sibling to the left.</h4>
+          <ul>
+            <li>
+              Assign X to <em>X + 1</em>
+            </li>
+          </ul>
           <li>
             Center each parent node in the center of the children. Halfway
             between the first child and the last child.
@@ -72,7 +73,7 @@ export default function App() {
             frame.
           </li>
           <li>
-            3<sup>rd</sup> and final tree traversal to determine final X values.
+            3<sup>rd</sup> traversal to determine final X values.
           </li>
         </ol>
       </p>

@@ -1,0 +1,44 @@
+body {
+  background-color: #303030;
+  color: #e9e9e9;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  border-bottom: 1px solid #666;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+h1,
+h2,
+p {
+  font-family: Bitter;
+  margin: 0.2rem 0 0 0;
+}
+
+p {
+  line-height: 2rem;
+}
+
+ul,
+ol {
+  margin: 0.2rem 0;
+  padding: 0 1rem;
+}
+
+a {
+  color: lightseagreen;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

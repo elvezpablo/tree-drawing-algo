@@ -1,8 +1,13 @@
 import * as React from 'react';
 import './style.css';
-import data from './data.json';
+import data from './data';
+import { buildTree } from './tree/utils';
 
 export default function App() {
+  React.useEffect(() => {
+    // let root = buildTree(data, null, null, 0);
+  });
+
   return (
     <div>
       <h1>Algorithm for Drawing Tidy Trees</h1>
@@ -18,8 +23,7 @@ export default function App() {
           Racheal Lims Blog
         </a>
       </p>
-     
-      
+
       {/* <h2>Data Structure</h2>
       <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </div>

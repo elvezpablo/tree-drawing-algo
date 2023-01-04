@@ -1,5 +1,7 @@
 import TreeNode from './TreeNode';
 
+const NODE_GAP = 3;
+
 function buildTree(dataNode, parent, prevSibling, level) {
   let root = new TreeNode(level, 0, parent, prevSibling, dataNode);
   for (let i = 0; i < dataNode.children.length; i++) {
@@ -14,28 +16,30 @@ function buildTree(dataNode, parent, prevSibling, level) {
   }
   return root;
 }
-
+// this should be node.x ??
 function calculateInitialValues(node) {
   for (let i = 0; i < node.children.length; i++) {
     calculateInitialValues(node.children[i]);
   }
-  //
-  if (node.prevSibling) {
-    node.y = node.prevSibling.y + 3;
+  // if the first child set X = 0
+  if (!node.prevSibling) {
+    node.x = 0;
+    // else set X to previous child X + spacer
   } else {
-    node.y = 0;
+    node.x = node.prevSibling.x + NODE_GAP;
   }
-
+  // if the node has a single child set modifier to child location
   if (node.children.length == 1) {
-    node.modifier = node.y;
+    node.modifier = node.x;
+    // if more than one child put node in the middle of the children
   } else if (node.children.length >= 2) {
     let minY = Infinity;
     let maxY = -minY;
     for (let i = 0; i < node.children.length; i++) {
-      minY = Math.min(minY, node.children[i].y);
-      maxY = Math.max(maxY, node.children[i].y);
+      minY = Math.min(minY, node.children[i].x);
+      maxY = Math.max(maxY, node.children[i].x);
     }
-    node.modifier = node.y - (maxY - minY) / 2;
+    node.modifier = node.x - (maxY - minY) / 2;
   }
 }
 

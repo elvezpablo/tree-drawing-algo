@@ -1,7 +1,7 @@
 export default class TreeNode {
   x: number;
   y: number;
-  finalY: number;
+  finalX: number;
   modifier: number;
 
   parent: TreeNode | undefined;
@@ -13,7 +13,7 @@ export default class TreeNode {
   constructor(x, y, parent, prevSibling, value) {
     this.x = x;
     this.y = y;
-    this.finalY = 0;
+    this.finalX = 0;
     this.modifier = 0;
 
     this.parent = parent;

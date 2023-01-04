@@ -1,12 +1,13 @@
 import * as React from 'react';
 import './style.css';
 import data from './data';
-import { buildTree, calculateInitialValues } from './tree/utils';
+import { buildTree, calculateInitialValues, applyModifier } from './tree/utils';
 
 export default function App() {
   React.useEffect(() => {
     let root = buildTree(data[0], 0);
     calculateInitialValues(root);
+    applyModifier(root, 0);
     console.log(root);
   });
 

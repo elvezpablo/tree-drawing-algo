@@ -22,7 +22,7 @@ function buildTree(
   return root;
 }
 // this should be node.x ??
-function calculateInitialValues(node) {
+function calculateInitialValues(node: TreeNode) {
   for (let i = 0; i < node.children.length; i++) {
     calculateInitialValues(node.children[i]);
   }
@@ -38,14 +38,22 @@ function calculateInitialValues(node) {
     node.modifier = node.x;
     // if more than one child put node in the middle of the children
   } else if (node.children.length >= 2) {
-    let minY = Infinity;
-    let maxY = -minY;
+    let minX = Infinity;
+    let maxX = -minX;
     for (let i = 0; i < node.children.length; i++) {
-      minY = Math.min(minY, node.children[i].x);
-      maxY = Math.max(maxY, node.children[i].x);
+      minX = Math.min(minX, node.children[i].x);
+      maxX = Math.max(maxX, node.children[i].x);
     }
-    node.modifier = node.x - (maxY - minY) / 2;
+    // console.log('maxX: ', maxX, ' minX: ', minX);
+    node.modifier = node.x - (maxX - minX) / 2;
   }
 }
 
-export { buildTree, calculateInitialValues };
+function applyModifier(node: TreeNode, modSum: number) {
+  node.finalX = node.x + modSum;
+  for (let i = 0; i < node.children.length; i++) {
+    applyModifier(node.children[i], node.modifier + modSum);
+  }
+}
+
+export { buildTree, calculateInitialValues, applyModifier };

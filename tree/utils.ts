@@ -8,7 +8,7 @@ function buildTree(
   parent?: TreeNode | undefined,
   prevSibling?: TreeNode | undefined
 ) {
-  let root = new TreeNode(level, 0, parent, prevSibling, dataNode);
+  let root = new TreeNode(0, level, parent, prevSibling, dataNode);
   for (let i = 0; i < dataNode.children.length; i++) {
     root.children.push(
       buildTree(

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './style.css';
 import data from './data';
-import { buildTree } from './tree/utils';
+import { buildTree, calculateInitialValues } from './tree/utils';
 
 export default function App() {
   React.useEffect(() => {
     let root = buildTree(data[0], 0);
+    calculateInitialValues(root);
     console.log(root);
   });
 

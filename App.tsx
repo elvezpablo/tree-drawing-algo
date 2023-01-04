@@ -5,7 +5,8 @@ import { buildTree } from './tree/utils';
 
 export default function App() {
   React.useEffect(() => {
-    // let root = buildTree(data, null, null, 0);
+    let root = buildTree(data[0], 0);
+    console.log(root);
   });
 
   return (

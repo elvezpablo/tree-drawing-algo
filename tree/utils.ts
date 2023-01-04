@@ -2,15 +2,20 @@ import TreeNode from './TreeNode';
 
 const NODE_GAP = 3;
 
-function buildTree(dataNode, parent, prevSibling, level) {
+function buildTree(
+  dataNode,
+  level: number,
+  parent?: TreeNode | undefined,
+  prevSibling?: TreeNode | undefined
+) {
   let root = new TreeNode(level, 0, parent, prevSibling, dataNode);
   for (let i = 0; i < dataNode.children.length; i++) {
     root.children.push(
       buildTree(
         dataNode.children[i],
+        level + 1,
         root,
-        i >= 1 ? root.children[i - 1] : null,
-        level + 1
+        i >= 1 ? root.children[i - 1] : null
       )
     );
   }

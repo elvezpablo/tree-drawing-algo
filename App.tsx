@@ -26,19 +26,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Algorithm for Drawing Tidy Trees</h1>
-      <p>
-        <a href="https://reingold.co/tidier-drawings.pdf" target="_blank">
-          Reingold-Tilford Algorithm
-        </a>{' '}
-        for Optimized Tree Drawing from{' '}
-        <a
-          href="https://rachel53461.wordpress.com/2014/04/20/algorithm-for-drawing-trees/"
-          target="_blank"
-        >
-          Rachel Lims Blog
-        </a>
-      </p>
+      
       <div>
         <svg width={size.width} height={size.height}>
           <rect
@@ -46,7 +34,8 @@ export default function App() {
             width={size.width}
             height={size.height}
           />
-          <CharacterNode x={10} y={10} />
+
+          <CharacterNode value="0" x={10} y={10} />
         </svg>
       </div>
       {/* <h2>Data Structure</h2>

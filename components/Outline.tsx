@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function Outlint() {
+export default function Outline() {
   return (
     <div>
       <h2>Algorithm Outline</h2>

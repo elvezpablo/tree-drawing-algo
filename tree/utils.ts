@@ -14,6 +14,7 @@ function buildTree(
     parent,
     prevSibling,
     value: dataNode.value,
+    children: [],
   };
   for (let i = 0; i < dataNode.children.length; i++) {
     root.children.push(

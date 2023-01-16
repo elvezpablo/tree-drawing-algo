@@ -3,7 +3,7 @@ import { TreeNode } from '../tree/TreeNode';
 import CharacterNode from './CharacterNode';
 
 type Props = {
-  nodes: TreeNode;
+  nodes: TreeNode[];
 };
 
 const size = {
@@ -12,11 +12,13 @@ const size = {
 };
 
 export default function TreeMap({ nodes }: Props) {
+  console.log('nodes: ', nodes);
   return (
     <svg width={size.width} height={size.height}>
       <rect fill="rgb(33,33,33,.3)" width={size.width} height={size.height} />
-
-      <CharacterNode value="0" x={10} y={10} />
+      {nodes.map((n) => {
+        return <CharacterNode value={n.value} x={10} y={10} />;
+      })}
     </svg>
   );
 }

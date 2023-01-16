@@ -13,16 +13,23 @@ import TreeMap from './components/TreeMap';
 import { TreeNode } from './tree/TreeNode';
 
 export default function App() {
-  const [tree, setTree] = React.useState<TreeNode | undefined>();
+  const [tree, setTree] = React.useState<TreeNode[]>([]);
 
   React.useEffect(() => {
     let root = buildTree(data[0], 0, undefined, undefined);
-    setTree(root);
-    // calculateInitialValues(root);
+    let nodes: TreeNode[] = [root];
+    const flatTree: TreeNode[] = [];
+    while (nodes.length) {
+      let node = nodes.shift();
+      nodes = [...nodes, ...node.children];
+      flatTree.push(node);
+    }
+    setTree(flatTree);
+    // calculateInitialValues(root) ;
     // applyModifier(root, 0);
     // updateXVals(root);
     // console.log(root);
-  });
+  }, []);
 
   return (
     <div>

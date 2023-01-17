@@ -11,6 +11,7 @@ import {
 import CharacterNode from './components/CharacterNode';
 import TreeMap from './components/TreeMap';
 import { TreeNode } from './tree/TreeNode';
+import ControlPanel from './components/ControlPanel';
 
 export default function App() {
   const [tree, setTree] = React.useState<TreeNode[]>([]);
@@ -28,12 +29,16 @@ export default function App() {
     // calculateInitialValues(root) ;
     // applyModifier(root, 0);
     // updateXVals(root);
-    // console.log(root);
   }, []);
+
+  const handleChange = (change: string, value?: number) => {
+    console.log('change: ', change);
+  };
 
   return (
     <div>
       <TreeMap nodes={tree} />
+      <ControlPanel onChange={handleChange} />
       {/* <h2>Data Structure</h2>
       <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </div>

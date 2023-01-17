@@ -7,8 +7,8 @@ type Props = {
 };
 
 const size = {
-  width: 800,
-  height: 500,
+  width: 600,
+  height: 400,
 };
 
 export default function TreeMap({ nodes }: Props) {

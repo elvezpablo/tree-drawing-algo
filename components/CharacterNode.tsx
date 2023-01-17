@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const defaultValues = {
-  width: 80,
+  width: 26,
   height: 26,
 };
 
